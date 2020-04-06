@@ -3,8 +3,7 @@
 ### TLS Record Protocol
 ```c
 typedef uint8_t RecordType;
-/* supported record types:
- *
+/*
  * change_cipher_spec = 20;
  * alert              = 21;
  * handshake          = 22;

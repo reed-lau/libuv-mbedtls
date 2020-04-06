@@ -21,6 +21,20 @@ typedef struct {
  * TLS1.2 : major = 3, minior = 3;
  */
 
+typedef uint8_t HandShakeType;
+/*
+ * hello_request.      = 0;
+ * client_hello        = 1;
+ * server_hello.       = 2;
+ * certificate         = 11;
+ * server_key_exchange = 12;
+ * certificate_request = 13;
+ * server_hello_done   = 14;
+ * certificate_verify  = 15;
+ * client_key_exchange = 16;
+ * finished            = 20;
+ */
+
 typedef struct {
   
 } HandShake;

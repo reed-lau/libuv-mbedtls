@@ -35,6 +35,16 @@ typedef uint8_t HandShakeType;
  */
 
 typedef struct {
+  uint8_t unix_time[4];
+  uint8_t random[28];
+} Random;
+
+typedef struct {
+  PrococolVersion version;
+} ClientHello;
+
+typedef struct {
   
 } HandShake;
+
 ```

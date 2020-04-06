@@ -40,7 +40,46 @@ typedef struct {
 } Random;
 
 typedef struct {
+  uint8_t length;
+  uint8_t data[0];
+} SessionId;
+
+typedef struct {
+  uint16_t length;
+  uint16_t ciphers[1];
+} CipherSuiteList;
+
+typedef struct {
+  uint8_t length;
+  uint8_t compress_method[0];
+} CompressionMethod;
+
+typedef struct {
+  uint16_t type;
+  uint16_t length;
+  uint8_t  data[1];
+} Extension;
+/* type:
+ * server_name = 0;
+ * max_fragment_length = 1;
+ * client_certificate_url = 2;
+ * trusted_ca_keys = 3;
+ * truncated_hmac = 4;
+ * status_request = 5;
+ */
+
+typedef struct {
+  uint16_t length;
+  Extension *Extension;
+} Extensions;
+
+typedef struct {
   PrococolVersion version;
+  Random  random;
+  SessionId session_id;
+  CipherSuiteList cipher_suite;
+  CompressionMethod compression_method;
+  Extensions extensions;
 } ClientHello;
 
 typedef struct {
